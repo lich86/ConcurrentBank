@@ -3,11 +3,10 @@ package com.chervonnaya;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ConcurrentBank {
-    private List<BankAccount> accounts = new ArrayList<>();
+    private final List<BankAccount> accounts = new ArrayList<>();
     ReentrantLock bankLock = new ReentrantLock();
 
     protected void transfer(BankAccount from, BankAccount to, BigDecimal amount) {
